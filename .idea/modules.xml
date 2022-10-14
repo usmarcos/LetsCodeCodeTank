@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LetsCodeCodeTank.iml" filepath="$PROJECT_DIR$/LetsCodeCodeTank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LetsCodeCodingTank.iml" filepath="$PROJECT_DIR$/LetsCodeCodingTank.iml" />
     </modules>
   </component>
 </project>
