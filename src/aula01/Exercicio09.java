@@ -15,17 +15,17 @@ public class Exercicio09 {
         float ferias = 0f;
         float percentual = 0.33f;
         float salarioLiquido = 0f;
-        // l�gica
-        System.out.println("-----C�lculo do salar�o l�quido anual-----");
-        System.out.println("Informe o sal�rio mensal: ");
+        // logica
+        System.out.println("-----Calculo do salario liquido anual-----");
+        System.out.println("Informe o salario mensal: ");
         salario = sc.nextFloat();
         System.out.println("Informe a quantidade de meses trabalhados: ");
         meses = sc.nextInt();
-        //calcular sal�rio mensal com ou sem d�cimo
+        //calcular salario mensal com ou sem decimo
         while (opcao != 1 && opcao != 2) {
-            System.out.println("Recebeu d�cimo terceiro?");
+            System.out.println("Recebeu decimo terceiro?");
             System.out.println("1 - Sim");
-            System.out.println("2 - N�o");
+            System.out.println("2 - Nao");
             opcao = sc.nextInt();
             switch (opcao) {
                 case 1: {
@@ -37,18 +37,18 @@ public class Exercicio09 {
                     break;
                 }
                 default:
-                    System.out.println("Valor incorreto, favor escolha uma das op��es.");
+                    System.out.println("Valor incorreto, favor escolha uma das opoees.");
                     break;
             }
         }
         //calculo inss
         inss = media * aliquotaInss;
-        //calculo ter�o de f�rias
+        //calculo terco de ferias
         ferias = salario * percentual;
-        //calculo sal�rio l�quido anual
+        //calculo salario liquido anual
         salarioLiquido = (media+ferias) - inss;
-        //sa�da
-        System.out.printf("O sal�rio l�quido do empregado �: R$ %.2f", salarioLiquido);
+        //saida
+        System.out.printf("O salario liquido do empregado e: R$ %.2f", salarioLiquido);
 
     }
 }

@@ -11,17 +11,17 @@ public class Exercicio04 {
         //telcado
         Scanner teclado = new Scanner (System.in);
         //sistema
-        System.out.println("Bem-vindo, ser� exibido os n�meros em ordem.");
-        System.out.println("Informe o primeiro n�mero:");
+        System.out.println("Bem-vindo, sera exibido os numeros em ordem.");
+        System.out.println("Informe o primeiro numero:");
         numeroUm = teclado.nextDouble();
-        System.out.println("Informe o segundo n�mero:");
+        System.out.println("Informe o segundo numero:");
         numeroDois = teclado.nextDouble();
-        System.out.println("Os n�meros digitados em ordem crescente s�o:");
+        System.out.println("Os numeros digitados em ordem crescente sao:");
         //logica
         if (numeroUm > numeroDois) {
             System.out.println(numeroDois + ", " +numeroUm+".");
         }else {
-            //se n�mero dois maior que o um ou se os valores forem iguais.
+            //se numero dois maior que o um ou se os valores forem iguais.
             System.out.println(numeroUm+", "+numeroDois+".");
         }
         teclado.close();

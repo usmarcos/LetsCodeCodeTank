@@ -9,12 +9,12 @@ public class Exercicio07 {
         float salario = 0f;
         float inss = 0f;
         // sistema
-        System.out.println("-----C�lculo de INSS-----");
-        System.out.println("Informe o sal�rio mensal do empregado: ");
+        System.out.println("-----Calculo de INSS-----");
+        System.out.println("Informe o salario mensal do empregado: ");
         salario = sc.nextFloat();
         // calculo
         inss = salario * aliquotaInss;
-        // sa�da
-        System.out.printf("O valor do INSS �: R$: %.2f", inss);
+        // saida
+        System.out.printf("O valor do INSS e: R$: %.2f", inss);
     }
 }

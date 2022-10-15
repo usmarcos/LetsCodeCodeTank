@@ -8,12 +8,12 @@ public class Exercicio08 {
         float salario = 0f;
         float ferias = 0f;
         // sistema
-        System.out.println("-----C�lculo do ter�o de f�rias-----");
-        System.out.println("Informe o sal�rio mensal do empregado: ");
+        System.out.println("-----Calculo do terco de ferias-----");
+        System.out.println("Informe o salario mensal do empregado: ");
         salario = sc.nextFloat();
         // calculo
         ferias = salario * percentual;
-        // sa�da
-        System.out.printf("O valor do ter�o de f�rias �: R$ %.2f", ferias);
+        // saida
+        System.out.printf("O valor do terco de ferias e: R$ %.2f", ferias);
     }
 }

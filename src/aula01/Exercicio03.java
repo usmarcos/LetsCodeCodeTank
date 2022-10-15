@@ -12,12 +12,12 @@ public class Exercicio03 {
         //scanner
         Scanner teclado = new Scanner(System.in);
         //obtendo os valores
-        System.out.println("Bem-vindo! Ser� apresentado o maior n�mero.");
-        System.out.println("Insira o primeiro n�mero:");
+        System.out.println("Bem-vindo! Sera apresentado o maior numero.");
+        System.out.println("Insira o primeiro numero:");
         numeroUm = teclado.nextDouble();
-        System.out.println("Insira o segundo n�mero:");
+        System.out.println("Insira o segundo numero:");
         numeroDois = teclado.nextDouble();
-        System.out.println("Insira o terceiro n�mero");
+        System.out.println("Insira o terceiro numero");
         numeroTres = teclado.nextDouble();
         //logica
         if (numeroUm > numeroDois && numeroUm > numeroTres ) {
@@ -31,9 +31,9 @@ public class Exercicio03 {
         }
         if (numeroUm == numeroDois && numeroUm == numeroTres) {
             maiorNumero = numeroUm;
-            System.out.println("Todos os valores s�o iguais: "+maiorNumero);
+            System.out.println("Todos os valores sao iguais: "+maiorNumero);
         }else {
-            System.out.println("O maior n�mero �: "+maiorNumero);
+            System.out.println("O maior numero e: "+maiorNumero);
         }
         teclado.close();
     }

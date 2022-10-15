@@ -42,7 +42,6 @@ public class UnificadorDeExercicios {
                     System.out.println("Valor incorreto, escolha uma opção novamente.");
             }
         }
-
         sc.close();
     }
 }
