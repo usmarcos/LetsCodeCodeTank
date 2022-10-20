@@ -18,7 +18,6 @@ public class Desafio03 {
         Random random = new Random();
         //formatar valores
         NumberFormat formatacao = new DecimalFormat("00");
-        //cor
 
         //imprimindo apenas o número 1 na diagonal da matriz e o restante imprimindo 0
         System.out.println("\n----Apenas o número 1 na diagonal da matriz e o restante imprimindo 0");
@@ -32,6 +31,7 @@ public class Desafio03 {
             }
             System.out.print("\n");
         }
+
         //imprimindo a matriz acima com a cor para diferenciar
         //imprimindo apenas o número 1 na diagonal da matriz e o restante imprimindo 0
         System.out.println("\n----Apenas o número 1 na diagonal (em cor de destaque) da matriz e o restante imprimindo 0");
@@ -45,7 +45,6 @@ public class Desafio03 {
             }
             System.out.print("\n");
         }
-
         //setando e imprimindo valores para a matriz
         System.out.println("\n----Setando e imprimindo os valores para uma matriz");
         for (int i = 0; i < TAM_MAX; i++) {
@@ -60,9 +59,9 @@ public class Desafio03 {
         for (int i = 0; i < TAM_MAX; i++) {
             for (int j = 0; j < TAM_MAX; j++) {
                 if (i == j) {
-                    System.out.print(formatacao.format(vetor[i][j]) + " ");
+                    System.out.print(corVermelha + formatacao.format(vetor[i][j]) + "  " + corReset);
                 } else {
-                    System.out.print("   ");
+                    System.out.print(formatacao.format(vetor[i][j]) + "  ");
                 }
             }
             System.out.print("\n");
