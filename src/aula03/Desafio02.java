@@ -1,14 +1,16 @@
 package aula03;
-
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Desafio02 {
     public static void main(String[] args) {
+        final int MAX = 100;
         System.out.println("Primeira solução.");
 
         Scanner sc = new Scanner(System.in);
-        int vetor[] = new int[99];
-        int vetorInvertido[] = new int[99];
+        int vetor[] = new int[MAX];
+        int vetorInvertido[] = new int[MAX];
 
         for (int i = 0; i < vetor.length; i++) {
             System.out.println("Digite um número: ");
@@ -20,8 +22,8 @@ public class Desafio02 {
                 for (int j = 0; j <= i; j++) {
                     if (controladorVetor >= 0) {
                         vetorInvertido[j] = vetor[controladorVetor];
-                        System.out.print("Vetor invertido ["+j+"] = "+ vetorInvertido[j]+" \n");
-                    }else {
+                        System.out.print("Vetor invertido [" + j + "] = " + vetorInvertido[j] + " \n");
+                    } else {
                         break;
                     }
                     controladorVetor--;
@@ -29,22 +31,5 @@ public class Desafio02 {
                 break;
             }
         }
-
-        System.out.println("Segunda solução.");
-        //solução curso
-        final int MAX = 100;
-        int[] numeros = new int[MAX];
-        int controle = 0;
-        int n = -1;
-
-        do {
-            System.out.println("Digite o número: ");
-            n = sc.nextInt();
-            if (n == 0) break;
-            numeros[controle] = n;
-            controle++;
-        } while (controle < MAX);
-
-        sc.close();
     }
 }

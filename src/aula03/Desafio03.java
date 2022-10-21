@@ -20,6 +20,21 @@ public class Desafio03 {
         NumberFormat formatacao = new DecimalFormat("00");
 
         //imprimindo apenas o número 1 na diagonal da matriz e o restante imprimindo 0
+        System.out.println("\n----Apenas o número 1 abaixo da diagonal da matriz e o número 0 acima da diagonal");
+        for (int i = 0; i < TAM_MAX; i++) {
+            for (int j = 0; j < TAM_MAX; j++) {
+                if (i > j) {
+                    System.out.print((vetor[i][j] = 1) + "  ");
+                } else if (i==j) {
+                    System.out.print((vetor[i][j] = 9) + "  ");
+                } else {
+                    System.out.print((vetor[i][j] = 0) + "  ");
+                }
+            }
+            System.out.print("\n");
+        }
+
+        //imprimindo apenas o número 1 na diagonal da matriz e o restante imprimindo 0
         System.out.println("\n----Apenas o número 1 na diagonal da matriz e o restante imprimindo 0");
         for (int i = 0; i < TAM_MAX; i++) {
             for (int j = 0; j < TAM_MAX; j++) {
