@@ -12,15 +12,21 @@ public class Piramide {
 
     public static void main(String[] args) {
         double qLinha = 0;
-        System.out.println("-----Desenho de pirâmide-----");
+        int sair = 0;
         do {
-            System.out.println("\nInforme o tamanho da pirâmide: ");
-            qLinha = sc.nextDouble();
-            if (qLinha <= 1)
-                System.out.println("Para renderizar a pirâmide é necessário que o valor seja maior que 1.");
-        } while (qLinha <= 1);
-        //desenha triangulo
-        new Piramide().desenhaTrinagulo(qLinha);
+            System.out.println("-----Desenho de pirâmide-----");
+            do {
+                System.out.println("\nInforme o tamanho da pirâmide: ");
+                qLinha = sc.nextDouble();
+                if (qLinha <= 1)
+                    System.out.println("Para renderizar a pirâmide é necessário que o valor seja maior que 1.");
+            } while (qLinha <= 1);
+            //desenha triangulo
+            new Piramide().desenhaTrinagulo(qLinha);
+            System.out.println("Gostaria de criar outro triângulo?");
+            //switch ()
+            sair = sc.nextInt();
+        } while (sair == 1);
     }
 
     public void desenhaTrinagulo(double qLinha) {
