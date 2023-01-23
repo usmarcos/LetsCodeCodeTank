@@ -3,45 +3,74 @@ package TesteFinal;
 import java.util.Random;
 import java.util.Scanner;
 
-public class QuadradoPerfeito {
-    /**
-     * Escreva um algoritmo que calcule se o quadrado pode ser considerado como perfeito. Para isso deve ser capturado o tamanho do quadrado a partir de input do usuário.
-     */
+class Scratch {
     public static void main(String[] args) {
-        int[][] matriz = montarEPreencherQuadrado();
-        //validação do quadrado perfeito
-        boolean quadradoPerfeito = true;
-        //percorrer matriz
+//        int[][] matriz = { {20, 6, 7, 17},
+//                {9, 15, 14, 12},
+//                {13, 11, 10, 16},
+//                {8, 18, 19, 5} };
+        int [][] matriz = montarEPreencherQuadrado();
+
+        int soma = 0;
+        boolean isPerfeito = true;
+
+        //calcula a soma da primeira linha para comparar com as outras
         for (int i = 0; i < matriz.length; i++) {
-            //variáveis para armanezar somatório e os valores de cada linha e coluna
-            int totalLinha = 0;
-            int totalColuna = 0;
-            int linha = 0;
-            int coluna = 0;
-            //realizando somatório de linhas e colunas para posteriormente comparar se são iguais ou diferentes
-            for (int j = 0; j < matriz.length; j++) {
-                if (i == 0) {
-                    linha = linha + matriz[i][j];
-                    coluna = coluna + matriz[j][i];
-                }
-                totalLinha = totalLinha + matriz[i][j];
-                totalColuna = totalColuna + matriz[j][i];
+            soma += matriz[0][i];
+        }
+
+        //compara a soma das linhas
+        for (int i = 0; i < matriz.length; i++) {
+            int linhaSoma = 0;
+            for (int j = 0; j < matriz[i].length; j++) {
+                linhaSoma += matriz[i][j];
             }
-            //condições para alterar o controle e validar a matriz
-            if (linha != coluna
-                    || totalColuna != coluna
-                    || totalLinha != totalColuna
-                    || totalLinha != linha) {
-                quadradoPerfeito = false;
+            if (linhaSoma != soma) {
+                isPerfeito = false;
+                break;
             }
         }
-        //verificando se é um quadrado perfeito
-        if (quadradoPerfeito) {
-            System.out.println("Quadrado perfeito");
+
+        //compara a soma das colunas
+        if (isPerfeito) {
+            for (int i = 0; i < matriz.length; i++) {
+                int colunaSoma = 0;
+                for (int j = 0; j < matriz[i].length; j++) {
+                    colunaSoma += matriz[j][i];
+                }
+                if (colunaSoma != soma) {
+                    isPerfeito = false;
+                    break;
+                }
+            }
+        }
+
+        //compara a soma das diagonais
+        if (isPerfeito) {
+            int diagonalPrincipal = 0;
+            int diagonalSecundaria = 0;
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    if (i == j) {
+                        diagonalPrincipal += matriz[i][j];
+                    }
+                    if (i + j == matriz.length - 1) {
+                        diagonalSecundaria += matriz[i][j];
+                    }
+                }
+            }
+            if (diagonalPrincipal != soma || diagonalSecundaria != soma) {
+                isPerfeito = false;
+            }
+        }
+
+        if (isPerfeito) {
+            System.out.println("O quadrado é perfeito!");
         } else {
-            System.out.println("Não é um quadrado perfeito");
+            System.out.println("O quadrado não é perfeito.");
         }
     }
+
     public static int[][] montarEPreencherQuadrado() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
@@ -51,7 +80,7 @@ public class QuadradoPerfeito {
         for (int linha = 0; linha < matriz.length; linha++) {
             int[] colunas = matriz[linha];
             for (int coluna = 0; coluna < colunas.length; coluna++) {
-                int valorAleatorio = random.nextInt(0, 1000);
+                int valorAleatorio = random.nextInt(1000);
                 colunas[coluna] = valorAleatorio;
                 System.out.print("[" + valorAleatorio + "]");
             }
