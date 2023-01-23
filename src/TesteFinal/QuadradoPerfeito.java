@@ -45,7 +45,6 @@ public class QuadradoPerfeito {
 
     private static void verificaQuadradoPerfeito(int[][] matriz) {
         // verifica linhas
-        boolean retorno = false;
         int somaEsperada = 0;
         int somaDiagonalPrincipal = 0;
         int somaDiagonalSecundaria = 0;
