@@ -9,40 +9,20 @@ public class QuadradoPerfeito {
      */
     public static void main(String[] args) {
 
-        //int[][] matriz = montarEPreencherQuadrado();
-        int[][] matriz = {{20, 6, 7, 17},
-                {9, 15, 14, 12},
-                {13, 11, 10, 16},
-                {8, 18, 19, 5}};
+        int[][] matriz = montarEPreencherQuadrado();
 
-        // verifica linhas
-        int totalLinha = 0;
-        int totalColuna = 0;
-        int somaDiagonalPrincipal = 0;
-        int somaDiagonalSecundaria = 0;
-        int controleDiagonalPrincipal = 0;
-        int controleDiagonalSecundaria = matriz.length - 1;
+//teste
+//        int[][] matriz = {{20, 6, 7, 17},
+//                {9, 15, 14, 12},
+//                {13, 11, 10, 16},
+//                {8, 18, 19, 5}};
+//
+//        int[][] matriz = {{2, 7, 6},
+//                {9, 5, 1},
+//                {4, 3, 8}};
 
 
-        for (int i = 0; i < matriz.length; i++) {
-            //linha e coluna, invertendo i e j para mudar as posições de leitura
-            for (int j = 0; j < matriz.length; j++) {
-                totalLinha += matriz[j][i];
-                totalColuna += matriz[i][j];
-                somaDiagonalPrincipal += matriz[controleDiagonalPrincipal][i];
-                somaDiagonalSecundaria += matriz[i][controleDiagonalSecundaria];
-            }
-            controleDiagonalPrincipal++;
-            controleDiagonalSecundaria--;
-        }
-
-        //verificando se é um quadrado perfeito
-        if (totalLinha == totalColuna && somaDiagonalPrincipal == somaDiagonalSecundaria){
-            System.out.println("Quadrado perfeito");
-        }else{
-            System.out.println("Não é um quadrado perfeito");
-        }
-
+        verificaQuadradoPerfeito(matriz);
     }
 
     public static int[][] montarEPreencherQuadrado() {
@@ -61,5 +41,43 @@ public class QuadradoPerfeito {
             System.out.println();
         }
         return matriz;
+    }
+
+    private static void verificaQuadradoPerfeito(int[][] matriz) {
+        // verifica linhas
+        boolean retorno = false;
+        int somaEsperada = 0;
+        int somaDiagonalPrincipal = 0;
+        int somaDiagonalSecundaria = 0;
+        boolean controle = true;
+
+        for (int i = 0; i < matriz.length; i++) {
+            somaEsperada += matriz[0][i];
+        }
+
+        for (int i = 0; i < matriz.length; i++) {
+            int totalLinha = 0;
+            int totalColuna = 0;
+            //linha e coluna, invertendo i e j para mudar as posições de leitura
+            for (int j = 0; j < matriz.length; j++) {
+                totalLinha += matriz[i][j];
+                totalColuna += matriz[j][i];
+                if (i == j) {
+                    somaDiagonalPrincipal += matriz[j][i];
+                    somaDiagonalSecundaria += matriz[i][j];
+                }
+            }
+            if (totalLinha != somaEsperada && totalColuna != somaEsperada) {
+                controle = false;
+                break;
+            }
+        }
+        //verificando se é um quadrado perfeito
+        if (controle && somaDiagonalPrincipal == somaEsperada && somaDiagonalSecundaria == somaEsperada) {
+            System.out.println("Quadrado perfeito");
+        } else {
+            System.out.println("Não é um quadrado perfeito");
+
+        }
     }
 }
